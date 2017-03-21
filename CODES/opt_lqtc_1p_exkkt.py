@@ -103,7 +103,7 @@ def opt_lqtc_1p_exkkt( S , r  , w0 = None , c = None  , D = None  ,    **kwargs)
     h     =   matrix(numpy.bmat([[r*0],[r*0]]))
     dims  =  {'l': 2*dim, 'q': [], 's': []}
     #  solver
-    sol   =   solvers.coneqp(Px,q , G,h , dims , kktsolver = F1) # exploit structured kkt
+    sol   =   solvers.coneqp(Px,q , G,h , dims , kktsolver = F) # exploit structured kkt
     #sol   =   solvers.coneqp(P,q , G,h , dims)
     x     =   sol['x']
     status=   sol['status']
